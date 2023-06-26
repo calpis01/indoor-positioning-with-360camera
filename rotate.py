@@ -21,11 +21,11 @@ from torchvision import transforms
 from equilib import Equi2Equi
 
 matplotlib.use("Agg")
-start = 10
-end = 90
-input_image = "output.png"
-RESULT_PATH = "/home/takuro/TakuroOhashi/Equirectangular_rotate/images/output"
-DATA_PATH = "/home/takuro/TakuroOhashi/Equirectangular_rotate/images/new_edge"
+start = 90
+end = 91
+input_image = "pano_lab.jpg"
+RESULT_PATH = "/home/takuro/TakuroOhashi/indoor_positioning/images"
+DATA_PATH = "/home/takuro/TakuroOhashi/indoor_positioning/images"
 
 
 def preprocess(
@@ -71,8 +71,8 @@ def test_image(path: str) -> None:
         print(i) 
         rot = {
             "roll": 0,  #
-            "pitch":  np.pi/180*i,  # vertical
-            "yaw": 0,  # horizontal
+            "pitch":  0,  # vertical
+            "yaw": np.pi/180*i,  # horizontal
         }
         if i > 90:
             rot = {
